@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace SSRentApi.Migrations
 {
     /// <inheritdoc />
-    public partial class initialcreate : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,7 +28,7 @@ namespace SSRentApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Port",
+                name: "Ports",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -38,7 +38,7 @@ namespace SSRentApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Port", x => x.Id);
+                    table.PrimaryKey("PK_Ports", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,9 +82,9 @@ namespace SSRentApi.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Vehicles_Port_PortId",
+                        name: "FK_Vehicles_Ports_PortId",
                         column: x => x.PortId,
-                        principalTable: "Port",
+                        principalTable: "Ports",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -127,7 +127,7 @@ namespace SSRentApi.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Port",
+                table: "Ports",
                 columns: new[] { "Id", "Location", "Name" },
                 values: new object[,]
                 {
@@ -180,7 +180,7 @@ namespace SSRentApi.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Port");
+                name: "Ports");
 
             migrationBuilder.DropTable(
                 name: "Users");

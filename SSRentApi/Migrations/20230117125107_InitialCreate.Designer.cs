@@ -11,8 +11,8 @@ using SSRentApi.Data;
 namespace SSRentApi.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20230117121407_initial-create")]
-    partial class initialcreate
+    [Migration("20230117125107_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,7 +105,7 @@ namespace SSRentApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Port");
+                    b.ToTable("Ports");
 
                     b.HasData(
                         new

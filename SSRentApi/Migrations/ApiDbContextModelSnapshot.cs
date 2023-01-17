@@ -102,7 +102,7 @@ namespace SSRentApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Port");
+                    b.ToTable("Ports");
 
                     b.HasData(
                         new

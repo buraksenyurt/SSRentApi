@@ -39,6 +39,7 @@ namespace SSRentApi.Data
         }
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Port> Ports { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Bookmark> Bookmarks { get; set; }
         public DbSet<User> Users { get; set; }
