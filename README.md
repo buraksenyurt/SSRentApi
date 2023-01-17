@@ -11,6 +11,30 @@ Panacea :P
 ```shell
 
 # to use Postgresql
-docker run --name postgresql -e POSTGRES_USER=myusername -e POSTGRES_PASSWORD=mypassword -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres
+docker run --name postgresql -e POSTGRES_USER=scoth -e POSTGRES_PASSWORD=tiger -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres
+
+# to use ef tool
+dotnet tool install -g dotnet-ef
+# or update the existing dotnet-ef tool
+dotnet tool update -g dotnet-ef
+
+# for ef migrations
+dotnet ef migrations add initial-create
+dotnet ef database update
+
+```
+
+## Docker
+
+```shell
+
+# start existing container
+docker start postgresql
+# to working container list
+docker ps -a
+# to stop container
+docker stop postgresql
+# drop container
+docker rm [container_id]
 
 ```
