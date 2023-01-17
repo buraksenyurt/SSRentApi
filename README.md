@@ -19,7 +19,7 @@ dotnet tool install -g dotnet-ef
 dotnet tool update -g dotnet-ef
 
 # for ef migrations
-dotnet ef migrations add initial-create
+dotnet ef migrations add InitialCreate
 dotnet ef database update
 
 ```
@@ -37,4 +37,15 @@ docker stop postgresql
 # drop container
 docker rm [container_id]
 
+```
+
+## Sample Requests
+
+```text
+
+# get all categories
+curl -X GET https://localhost/SSRestApi/api/Categories
+
+# get all ports
+curl -X GET https://localhost/SSRestApi/api/Ports
 ```
