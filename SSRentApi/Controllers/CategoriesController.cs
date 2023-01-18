@@ -15,7 +15,7 @@ namespace SSRentApi.Controllers
         }
 
         [HttpGet]
-        //[Authorize]
+        [Authorize]
         public IActionResult Get()
         {
             return Ok(_dbContext.Categories);
