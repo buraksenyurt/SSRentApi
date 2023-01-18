@@ -41,11 +41,32 @@ docker rm [container_id]
 
 ## Sample Requests
 
+We will need a token information to get a response from the service functions. In this symbolic example, we can use UsersController's Register and Login functions to add users and get JWT values. Below is how we can get token information with the Login method.
+
+```text
+HTTP Post
+http://localhost:5206/api/Users/Login
+
+{
+  "email": "skati@email.com",
+  "password": "skati@1234"
+}
+
+```
+
+To call any service function, we just need to add the Bearer token information to the Request. It's easy to do this in the Authorization section in Postman. Or we can integrate it into curl commands like below. On the other hand, there is an additional development for swagger to be able to use JWT tokens in the application.
+
 ```text
 
 # get all categories
-curl -X GET https://localhost/SSRestApi/api/Categories
+curl -X 'GET' \
+  'http://localhost:5206/api/Categories' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value'
 
 # get all ports
-curl -X GET https://localhost/SSRestApi/api/Ports
+curl -X 'GET' \
+  'http://localhost:5206/api/Categories' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value'
 ```
