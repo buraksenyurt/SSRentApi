@@ -6,11 +6,12 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace RealEstateApi.Controllers
+namespace SSRentApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UsersController
+    : ControllerBase
     {
         private readonly ApiDbContext _dbContext;
         private IConfiguration _config;
