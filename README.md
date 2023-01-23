@@ -57,16 +57,81 @@ http://localhost:5206/api/Users/Login
 To call any service function, we just need to add the Bearer token information to the Request. It's easy to do this in the Authorization section in Postman. Or we can integrate it into curl commands like below. On the other hand, there is an additional development for swagger to be able to use JWT tokens in the application.
 
 ```text
+# Registera a new user
+curl -X 'POST' \
+  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Users/Register' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 4,
+  "name": "Takaşi Kovaç",
+  "email": "kovac@email.com",
+  "password": "kovac@1234"
+}'
 
-# get all categories
+# User Login and get Token
+curl -X 'POST' \
+  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Users/Login' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "email": "skati@email.com",
+  "password": "skati@1234"
+}'
+
+# Get all categories
 curl -X 'GET' \
   'http://localhost:5206/api/Categories' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value'
 
-# get all ports
+# Get all ports
 curl -X 'GET' \
   'http://localhost:5206/api/Categories' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value'
+
+# Get bookmarks
+curl -X 'GET' \
+  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Bookmarks' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value'
+
+# Add Vehicle
+curl -X 'POST' \
+  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Vehicles' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 1234,
+  "name": "Thunder Bird",
+  "detail": "Interstellar cruise",
+  "portId": 2,
+  "imageUrl": "thunder_bird.png",
+  "price": 45600,
+  "range": 1000000,
+  "isTrending": false,
+  "categoryId": 2
+}'
+
+# Add bookmark
+curl -X 'POST' \
+  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Bookmarks' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 3,
+  "status": true,
+  "userId": 1,
+  "vehicleId": 1234
+}'
+
+# Delete bookmark
+curl -X 'DELETE' \
+  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Bookmarks/3' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value'
 ```
