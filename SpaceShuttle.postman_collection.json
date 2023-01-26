@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "e91ddc38-9fe6-4613-9450-2ed5f84fbe83",
+		"name": "Space Shuttle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1401662"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"skati@email.com\",\r\n    \"password\": \"skati@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5206/api/Users/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Users",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"Takaşi Kovaç\",\r\n    \"email\": \"kovac@email.com\",\r\n    \"password\": \"kovac@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5206/api/Users/Register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Users",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1234,\r\n    \"name\": \"Thunder Bird\",\r\n    \"detail\": \"Interstellar cruise\",\r\n    \"portId\": 2,\r\n    \"imageUrl\": \"thunder_bird.png\",\r\n    \"price\": 45600,\r\n    \"range\": 1000000,\r\n    \"isTrending\": false,\r\n    \"categoryId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5206/api/Vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Bookmark",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"status\": true,\r\n    \"userId\": 1,\r\n    \"vehicleId\": 1234\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5206/api/Bookmarks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Bookmarks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5206/api/Categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Ports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5206/api/Ports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Ports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bookmarks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5206/api/Bookmarks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Bookmarks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicles By Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5206/api/Vehicles/list?categoryId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Vehicles",
+						"list"
+					],
+					"query": [
+						{
+							"key": "categoryId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicle Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5206/api/Vehicles/detail?id=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Vehicles",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bookmark",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5206/api/Bookmarks/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Bookmarks",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

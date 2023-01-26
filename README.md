@@ -112,7 +112,7 @@ curl -X 'GET' \
 
 # Add Vehicle
 curl -X 'POST' \
-  'https://localhost:5206/api/Vehicles' \
+  'http://localhost:5206/api/Vehicles' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value' \
   -H 'Content-Type: application/json' \
@@ -130,7 +130,7 @@ curl -X 'POST' \
 
 # Add bookmark
 curl -X 'POST' \
-  'https://localhost:5206/api/Bookmarks' \
+  'http://localhost:5206/api/Bookmarks' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value' \
   -H 'Content-Type: application/json' \
@@ -143,7 +143,7 @@ curl -X 'POST' \
 
 # Delete bookmark
 curl -X 'DELETE' \
-  'https://localhost:5206/api/Bookmarks/3' \
+  'http://localhost:5206/api/Bookmarks/3' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value'
 ```
