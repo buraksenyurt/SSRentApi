@@ -146,4 +146,16 @@ curl -X 'DELETE' \
   'http://localhost:5206/api/Bookmarks/3' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value'
+
+# Search Vehicle with Port
+curl -X 'GET' \
+  'http://localhost:5206/api/Vehicles/Search?portName=Transfer%20Alpha' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value'
+
+# Get vehicle detail by id
+curl -X 'GET' \
+  'http://localhost:5206/api/Vehicles/Detail?id=1234' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer token_value'
 ```

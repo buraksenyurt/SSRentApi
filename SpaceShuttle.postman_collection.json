@@ -272,6 +272,43 @@
 			"response": []
 		},
 		{
+			"name": "Search vehicle by port name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJza2F0aUBlbWFpbC5jb20iLCJleHAiOjE2NzQ5ODIxMjAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNi8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDYvIn0.z2la79MRPvD8uoWvt4WeywglvIB05puWBlqcd7qprQ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5206/api/Vehicles/Search?portName=Transfer Alpha",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5206",
+					"path": [
+						"api",
+						"Vehicles",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "portName",
+							"value": "Transfer Alpha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Vehicle Detail",
 			"request": {
 				"auth": {
