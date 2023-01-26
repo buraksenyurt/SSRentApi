@@ -22,6 +22,15 @@ dotnet tool update -g dotnet-ef
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 
+# For Visual Studio Developers
+
+# in package manager console
+Install-Package Microsoft.EntityFrameworkCore.Tools
+# to create migration
+Add-Migration initial-create
+# to create/update database
+Update-Database
+
 ```
 
 ## Docker
@@ -36,6 +45,9 @@ docker ps -a
 docker stop postgresql
 # drop container
 docker rm [container_id]
+
+# if you want you can use docker-compose file
+docker-compose up
 
 ```
 
@@ -59,7 +71,7 @@ To call any service function, we just need to add the Bearer token information t
 ```text
 # Registera a new user
 curl -X 'POST' \
-  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Users/Register' \
+  'http://localhost:5206/api/Users/Register' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value' \
   -H 'Content-Type: application/json' \
@@ -72,7 +84,7 @@ curl -X 'POST' \
 
 # User Login and get Token
 curl -X 'POST' \
-  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Users/Login' \
+  'http://localhost:5206/api/Users/Login' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -88,19 +100,19 @@ curl -X 'GET' \
 
 # Get all ports
 curl -X 'GET' \
-  'http://localhost:5206/api/Categories' \
+  'http://localhost:5206/api/Ports' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value'
 
 # Get bookmarks
 curl -X 'GET' \
-  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Bookmarks' \
+  'http://localhost:5206/api/Bookmarks' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value'
 
 # Add Vehicle
 curl -X 'POST' \
-  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Vehicles' \
+  'https://localhost:5206/api/Vehicles' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value' \
   -H 'Content-Type: application/json' \
@@ -118,7 +130,7 @@ curl -X 'POST' \
 
 # Add bookmark
 curl -X 'POST' \
-  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Bookmarks' \
+  'https://localhost:5206/api/Bookmarks' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value' \
   -H 'Content-Type: application/json' \
@@ -131,7 +143,7 @@ curl -X 'POST' \
 
 # Delete bookmark
 curl -X 'DELETE' \
-  'https://buraksenyurt-shiny-journey-54xg9rw5rx24qx9-5206.preview.app.github.dev/api/Bookmarks/3' \
+  'https://localhost:5206/api/Bookmarks/3' \
   -H 'accept: */*' \
   -H 'Authorization: Bearer token_value'
 ```
