@@ -1,0 +1,18 @@
+services:
+    pgdatabase:
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=scoth
+            - POSTGRES_PASSWORD=tiger
+            - POSTGRES_DB=space_shuttle_db
+        volumes:
+            - "./space_shuttle_postgres_data:/var/lib/postgresql/data:rw"
+        ports:
+            - "5432:5432"
+    pgadmin:
+        image: dpage/pgadmin4
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=scoth.tiger@email.com
+            - PGADMIN_DEFAULT_PASSWORD=scoth@1234
+        ports:
+            - "5050:80"
